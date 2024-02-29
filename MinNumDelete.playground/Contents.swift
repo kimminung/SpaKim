@@ -1,25 +1,25 @@
 //신승현님 코드
 func solution0(_ arr:[Int]) -> [Int] {
     
-    var min: Int = arr[0];
-    var num: Int = 0;
-    var result: [Int] = arr;
+    var min: Int = arr[0]
+    var num: Int = 0
+    var result: [Int] = arr
     
     guard result.count >= 1 else {
-        return [-2];
+        return [-2]
     }
     
     for i in 0..<result.count {
         if result.count == 1 {
-            return [-1];
+            return [-1]
         } else if min > result[i] {
-            min = result[i];
-            num = i;
+            min = result[i]
+            num = i
         }
     }
     result.remove(at: num)
     
-    return result;
+    return result
 }
 
 func solution1(_ arr:[Int]) -> [Int] {

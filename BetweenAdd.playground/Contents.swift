@@ -1,7 +1,16 @@
 import UIKit
 
 func solution(_ a:Int, _ b:Int) -> Int64 {
-    // guard a >= -10000000, b >= -10000000, a <= 10000000, b <= 10000000 else {return -1}
+    guard a >= -10000000, b >= -10000000, a <= 10000000, b <= 10000000 else {return 10000001}
+    
+    var result = Int64(a+b) * Int64(max(a,b) - min(a,b) + 1)/2
+    return result
+}
+
+/*
+func solution(_ a:Int, _ b:Int) -> Int64 {
+    
+    guard a >= -10000000, b >= -10000000, a <= 10000000, b <= 10000000 else {return 10000001}
 
     var result : Int64 = 0
 
@@ -25,11 +34,19 @@ func solution(_ a:Int, _ b:Int) -> Int64 {
         return result
     }
 }
-
+*/
 solution(3, 5)
 //solution(3, 3)
 //solution(5, 3)
 
+func solution0(_ a:Int, _ b:Int) -> Int64 {
+    return Int64(Int((abs(a-b))+1)*(a+b)/2)
+}
+
+func solution1(_ a:Int, _ b:Int) -> Int64 {
+    var result = Int64(Array(a > b ? b...a : a...b).reduce(0, +))
+    return result
+  }
 
 
 func solution2(_ a:Int, _ b:Int) -> Int64 {

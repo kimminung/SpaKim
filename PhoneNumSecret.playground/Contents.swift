@@ -1,5 +1,37 @@
 import UIKit
 
+func solution15(_ phone_number:String) -> String {
+    return String("\(String(repeating: "*", count: phone_number.count - 4))\(phone_number.suffix(4))")
+}
+
+func solution16(_ phone_number:String) -> String {
+    return String(repeating:"*", count:phone_number.count-4)+phone_number.suffix(4)
+}
+
+func solution17(_ phone_number:String) -> String {
+    guard phone_number.count > 4 else { return phone_number }
+    return String(phone_number.enumerated().map{($0.offset<phone_number.count-4 ? Character("*") : $0.element)})
+}
+
+func solution18(_ phone_number:String) -> String {
+    var ans: String = ""
+    for _ in 0..<(phone_number.count-4) {
+        ans += "*"
+    }
+    let startIdx = phone_number.index(phone_number.endIndex, offsetBy:-4)
+    let endIdx = phone_number.index(before:phone_number.endIndex)
+    let range = startIdx...endIdx
+    return ans + phone_number[range]
+}
+
+func solution19(_ phone_number:String) -> String {
+    let number = phone_number
+    let start = number.startIndex
+    let end = number.index(number.startIndex, offsetBy: number.count-4);
+
+    return number.replacingOccurrences(of: number[start..<end], with: String(repeating: "*", count: number.count - 4))
+}
+
 func solution(_ phone_number:String) -> String {
   var result = Array(phone_number)
     

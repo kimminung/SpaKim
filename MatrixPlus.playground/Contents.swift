@@ -2,7 +2,7 @@ import UIKit
 
 //송동익님 코드
 func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
-    
+    guard arr1.count <= 500 && arr2.count <= 500 else {return []}
     var arr : [[Int]] = []
     
     arr = zip(arr1,arr2).map{zip($0,$1).map{$0+$1}}

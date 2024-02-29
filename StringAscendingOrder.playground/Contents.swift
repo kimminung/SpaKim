@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-
+/*
 func solution(_ s:String) -> String {
     var strArr = s.map{String($0)}
     var valueInt = [Int]()
@@ -23,6 +23,10 @@ func solution(_ s:String) -> String {
 //    valueStr = [String("\(valueInt)")]
     
     return result
+}*/
+
+func solution(_ s:String) -> String {
+    return String(s.sorted { $0 > $1 })
 }
 
 

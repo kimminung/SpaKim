@@ -1,4 +1,38 @@
 import UIKit
+
+func solution8(_ seoul:[String]) -> String {
+    return "김서방은 \(seoul.index(of: "Kim")!)에 있다"
+}
+
+func solution9(_ seoul:[String]) -> String {
+    return "김서방은 \(seoul.indices.filter { seoul[$0] == "Kim" }.first!)에 있다"
+}
+
+//푼거
+
+func solution(_ seoul:[String]) -> String {
+    // guard seoul.count <= 1000, seoul.count >= 1,
+    //       seoul.capacity <= 20, seoul.capacity >= 1,
+    //       seoul.contains("Kim") == true else {return "Error"}
+
+    var seoul = seoul
+
+    var count = 0
+    for _ in seoul.startIndex...seoul.endIndex{
+
+        if seoul.first == "Kim" {
+            return String("김서방은 \(count)에 있다")
+        } else {
+            seoul.removeFirst()
+            count += 1
+//            return String("false")
+            continue
+        }
+    }
+    return String(count)
+//    return String("김서방은 \(count)에 있다")
+}
+/*
 //답만 맞고, 코테 실패
 func solution(_ seoul:[String]) -> String {
     guard seoul.count <= 1000, seoul.count >= 1,
@@ -26,6 +60,7 @@ func solution(_ seoul:[String]) -> String {
     return String(count)
 //    return String("김서방은 \(count)에 있다")
 }
+ */
     
 solution(["Jane","a" ,"Kim"])
     /*

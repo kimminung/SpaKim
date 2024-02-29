@@ -1,5 +1,38 @@
 import Foundation
 
+func solution13(_ absolutes:[Int], _ signs:[Bool]) -> Int {
+    return (0..<absolutes.count).map { signs[$0] ? absolutes[$0] : -absolutes[$0] }.reduce(0, +)
+}
+
+func solution14(_ absolutes:[Int], _ signs:[Bool]) -> Int {
+    zip(absolutes, signs)
+        .map { $1 ? $0 : -$0 }
+        .reduce(0, +)
+}
+
+func solution15(_ absolutes: [Int], _ signs: [Bool]) -> Int {
+    var index = -1
+    return absolutes.reduce(0) {
+        index += 1
+        return signs[index] ? $0 + $1 : $0 - $1
+    }
+}
+
+func solution16(_ absolutes:[Int], _ signs:[Bool]) -> Int {
+    zip(absolutes, signs).reduce(0) {
+        $0 + ($1.1 ? $1.0 : -$1.0)
+    }
+}
+
+func solution17(_ absolutes:[Int], _ signs:[Bool]) -> Int {
+    return absolutes.enumerated().map {
+        if !signs[$0.0] {
+            return -$0.1
+        }
+        return $0.1
+    }.reduce(0, +)
+}
+
 func solution(_ absolutes:[Int], _ signs:[Bool]) -> Int {
     
     var result = 0

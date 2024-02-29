@@ -25,7 +25,7 @@ func solution(_ price:Int, _ money:Int, _ count:Int) -> Int64{
 //solution(3, 20, 4)
 //solution(17, 20, 3)
 //solution(4, 40, 4)
-solution(1, 20, 4)
+//solution(1, 20, 4)
 
 
 //

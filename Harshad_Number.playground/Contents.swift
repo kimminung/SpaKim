@@ -7,6 +7,38 @@ func solution(_ x:Int) -> Bool {
 }
 
 
+func solution9(_ x:Int) -> Bool {
+    return x % String(x).reduce(0, {$0+Int(String($1))!}) == 0
+}
+
+
+func solution10(_ x:Int) -> Bool {
+    return x % String(x).map{ Int(String($0))! }.reduce(0) { $0 + $1 } == 0 ? true : false
+}
+
+func solution11(_ x: Int) -> Bool {
+    let sum = Array(String(x)).reduce(0) { (Result, Character) -> Int in
+        return Result + Int(String(Character))!
+    }
+    return (x % sum == 0)
+}
+
+func solution12(_ x:Int) -> Bool {
+    return x % String(x).map({ (char) -> Int in
+        return char.wholeNumberValue!
+    }).reduce(0, {$0+$1}) == 0
+}
+
+func solution13(_ x:Int) -> Bool {
+    let number = String(x).reduce(0, { Int(String($0))! + Int(String($1))! })
+    return x % number == 0
+}
+
+func solution14(_ x:Int) -> Bool {
+    let a = String(x).map {Int(String($0))!}.reduce(0) {$0 + $1}
+
+    return x % a == 0 ? true : false
+}
 
 func solution1(_ x:Int) -> Bool {
     var sum: Int = 0
