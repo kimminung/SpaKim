@@ -1,5 +1,16 @@
 import Foundation
 
+func solution0(_ x:Int, _ n:Int) -> [Int64] {
+    guard x >= -10000000, x <= 10000000, n <= 1000 else {return []}
+    
+//    var result : [Int64] = (1...n).map{$0 * x}
+//    var result : [Int64] = (1...n).map{($0 * x)}
+    var result = (1...n).map{Int64($0 * x)}
+    return result
+}
+
+solution0(2, 5)
+
 func solution(_ x:Int, _ n:Int) -> [Int64] {
     guard x >= -10000000, x <= 10000000, n <= 1000 else {return []}
 //    var result = [Int64]() //초기화
