@@ -53,3 +53,23 @@ func solution(_ s:String) -> Int {
 }
  
 print(solution(String(s)))
+solution("-0234")
+
+
+func solution1(_ s:String) -> Int {
+    return (s.hasPrefix("+") ? Int(s.replacingOccurrences(of: "+", with: "")) : Int(s))!
+}
+
+
+func solution2(_ s:String) -> Int {
+    var answer = s.components(separatedBy: "").map({Int($0)!})
+    return answer[0]
+}
+
+func solution3(_ s:String) -> Int {
+    if s[s.startIndex] == "-" {
+        return -1*(Int(String(s[s.index(after: s.startIndex)..<s.endIndex])) ?? 0)
+    }
+
+    return Int(String(s[s.startIndex..<s.endIndex])) ?? 0
+}

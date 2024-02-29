@@ -158,3 +158,54 @@ print(solution(Int64(n)))
 */
 
 
+
+func solution0(_ n:Int64) -> [Int] {
+    return  "\(n)".compactMap { $0.hexDigitValue }.reversed()
+}
+
+
+func solution1(_ n:Int64) -> [Int] {
+    let arr = String(n).compactMap { Int(String($0)) }
+    return arr.reversed()
+}
+
+
+func solution2(_ n:Int64) -> [Int] {
+    return String(n).reversed().compactMap { Int(String($0)) }
+}
+
+
+func solution3(_ n:Int64) -> [Int] {
+    return  String(String(n).reversed()).map { Int(String($0))! }
+}
+
+
+func solution4(_ n:Int64) -> [Int] {
+    return String(n).reversed().map{Int(String($0))!};
+}
+
+
+func solution5(_ n:Int64) -> [Int] {
+    let input = String(n)
+    var res = [Int]()
+    for i in 0..<input.count {
+        res.append(Int(String(input[input.index(input.startIndex, offsetBy: i)]))!)
+    }
+    res.reverse()
+    return res
+}
+
+
+func solution6(_ n:Int64) -> [Int] {
+    return Array(String(n)).map{ Int(String($0))! }.reversed()
+}
+
+func solution7(_ n:Int64) -> [Int] {
+    guard n <= 10000000000, n > -1 else { return [-100] }
+    
+    var result : [Int] = Array(String(n)).map{Int(String($0))!}.reversed()
+    
+    return result
+}
+
+solution7(12345)

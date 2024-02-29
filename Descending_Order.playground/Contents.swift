@@ -1,23 +1,66 @@
 import UIKit
 
-func solution(_ n:Int64) -> Int64 {
-    guard n >= 1, n <= 8000000000 else {return -1}
-    
-    var sprtd = n
-    var str : [String]=[]
-    var result = str.sorted()
-    
-    while sprtd > 0 {
-            str.append(String(sprtd % 10))
-            sprtd /= 10
-        }
-    
-    return
+//func solution(_ n:Int64) -> Int64 {
+//    guard n >= 1, n <= 8000000000 else {return -1}
+//    
+//    var sprtd = n
+//    var str : [Int64]=[]
+//    var result = str.sorted()
+//    
+//    while sprtd > 0 {
+//            str.append(Int64(sprtd % 10))
+//            sprtd /= 10
+//        }
+//    
+//    return result
+//}
+
+//solution(118372)
+
+func solution0(_ n:Int64) -> Int64 {
+    var result = Int64(String(Array(String(n)).sorted { $0 > $1 }))!
+    return result
 }
 
-solution(118372)
+func solution(_ n:Int64) -> Int64 {
+    var list: [Int] = []
+    var val = n
+
+    while val > 0 {
+        list.append(Int(val % 10))
+        val /= 10
+    }
+
+    list.sort { $0 < $1 }
+    val = 1
+
+    var answer: Int64 = 0
 
 
+    while list.count > 0 {
+        answer += Int64(list.removeFirst()) * val
+        val *= 10
+    }
+
+    return answer
+}
+
+func solution1(_ n:Int64) -> Int64 {
+    var result : [String] = []
+    var number = n
+    while(number>0){
+        result.append(String(number%10))
+        number = number / 10
+    }
+    result.sort(by:>)
+
+    var temp : String = ""
+    for i in result
+    {
+        temp += i
+    }
+    return Int64(temp)!
+}
 
 
 func solution2(_ n:Int64) -> Int64 {
@@ -36,6 +79,10 @@ func solution4(_ n:Int64) -> Int64 {
     return Int64(String(n).sorted(by: >).reduce("") {String($0) + String($1)})!
 }
 
+
+func solution44(_ n:Int64) -> Int64 {
+    return Int64(String(String(n).sorted(by: >)))!
+}
 
 
 func solution5(_ n:Int64) -> Int64 {
