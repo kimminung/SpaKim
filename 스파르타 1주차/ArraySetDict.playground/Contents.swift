@@ -15,11 +15,92 @@ var array5 = Array<Int>()
 var array6 = [Int]()
 var array7 = [Int](repeating: 0, count: 10)   //생성과 동시에 10개 Element 생성 및 0으로 초기화
 
+// 배열 갯수 확인하기
+var array8 = [1, 2, 3]
 
-let count: Int = array1.count      // 배열 갯수 확인 : 3
-let isEmpty: Bool = array1.isEmpty // 배열 비었는지 확인 : false
+let count: Int = array8.count      // 배열 갯수 확인 : 3
+let isEmpty: Bool = array8.isEmpty // 배열 비었는지 확인 : false
 
+// 배열 요소에 접근하기
+var array9 = [1, 2, 3]
 
+// 1. Subscript로 접근하기
+array9[0]        // 1
+array9[1]        // 2
+ 
+// 2. 범위로 접근하기
+array9[0...1]    // [1, 2]
+ 
+// 3. 속성으로 접근하기
+array9.first     // Optional(1)
+array9.last      // Optional(3)
+
+// 배열에 요소 추가하기
+// 1. append : 끝에 추가
+var array10 = [1, 2, 3]
+array10.append(4)                            // [1, 2, 3, 4]
+array10.append(contentsOf: [5, 6, 7])        // [1, 2, 3, 4, 5, 6, 7]
+
+// 2. inset : 중간에 추가
+var array20 = [1, 2, 3]
+array20.insert(0, at: 0)                      // [0, 1, 2, 3]
+array20.insert(contentsOf: [10, 100], at: 2)  // [0, 1, 10, 100, 2, 3 ]
+
+// 배열에 요소 변경하기
+// 1. Subscript로 변경하기
+var array11 = [1, 2, 3]
+array11[0] = 10                       // [10, 2, 3]
+array11[0...2] = [10, 20, 30]         // [10, 20, 30]
+array11[0...2] = [0]                  // [0]
+array11[0..<1] = []                   // []
+ 
+// 2. replaceSubrange로 바꾸기 (범위 변경 시)
+var array21 = [1, 2, 3]
+array21.replaceSubrange(0...2, with: [10, 20, 30])     // [10, 20, 30]
+array21.replaceSubrange(0...2, with: [0])              // [0]
+array21.replaceSubrange(0..<1, with: [])               // []
+
+// 배열에 요소 삭제
+// 1. 일반적인 삭제하기
+var array12 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+ 
+array12.remove(at: 2)             // [1, 2, 4, 5, 6, 7, 8, 9]
+array12.removeFirst()             // [2, 4, 5, 6, 7, 8, 9]
+array12.removeFirst(2)            // [5, 6, 7, 8, 9]
+array12.removeLast()              // [5, 6, 7, 8]
+array12.popLast()                 // [5, 6, 7]
+array12.removeLast(2)             // [5]
+array12.removeAll()               // []
+ 
+// 2. 특정 범위 삭제하기
+var array22 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+ 
+array22.removeSubrange(1...3)     // [1, 5, 6, 7, 8, 9]
+array22[0..<2] = []               // [6, 7, 8, 9]
+
+// 배열 비교하기
+var array14 = [1, 2, 3]
+var array24 = [1, 2, 3]
+var array34 = [1, 2, 3, 4, 5,]
+ 
+array14 == array24                    //true
+array14.elementsEqual(array3)        //false
+
+// 배열 정렬하기
+var array15 = [1, 5, 3, 8, 6, 10, 14]
+ 
+// 1. sort : 배열을 직접 "오름차순"으로 정렬
+array15.sort()                                         // [1, 3, 5, 6, 8, 10, 14]
+ 
+// 1-1. sort + 클로저 : 배열을 직접 "내림차순"으로 정렬
+array15.sort(by: >)                                    // [14, 10, 8, 6, 5, 3, 1]
+ 
+ 
+// 2. sorted : 원본은 그대로 두고, "오름차순"으로 정렬된 새로운 배열을 만들어 리턴
+let sortedArray = array1.sorted()                     // [1, 3, 5, 6, 8, 10, 14]
+ 
+// 2-1. sorted + 클로저 : 원본은 그대로 두고, "내림차순"으로 정렬된 새로운 배열을 만들어 리턴
+let sortedArray2 = array1.sorted(by: >)               // [14, 10, 8, 6, 5, 3, 1]
 
 // MARK: - 세트
 
