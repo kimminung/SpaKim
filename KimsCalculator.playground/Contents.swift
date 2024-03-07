@@ -129,11 +129,11 @@ calculator.remainder()
 
 
 /*
-//Lv.1 + Lv.2 & oprator추가
+//Lv.1 + Lv.2 & operator추가
 class Calculator {
-    func calculator(_ oprator: Character, _ firstNumber: Int, _ SecondNumber: Int) -> Double {
+    func calculator(_ operator: Character, _ firstNumber: Int, _ SecondNumber: Int) -> Double {
         
-        switch oprator {
+        switch operator {
         case "+" :
             return Double(firstNumber + SecondNumber)
         case "-" :

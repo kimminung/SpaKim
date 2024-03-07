@@ -94,7 +94,7 @@ func solution6(_ n:Int64) -> Int64 {
             result = (temp + 1) * (temp + 1)
         }
         temp += 1
-    }
+    }//
     return result
 }
 

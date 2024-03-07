@@ -6,7 +6,7 @@ func solution2(_ s:String) -> String {
 
     return String(s[String.Index(encodedOffset: (s.count-1)/2)...String.Index(encodedOffset: s.count/2)])
 }
-
+//asd
 //제출한거
 func solutiona(_ s:String) -> String {
 
