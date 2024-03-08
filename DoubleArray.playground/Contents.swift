@@ -5,16 +5,23 @@ func doubleArray(_ num1:Int, _ num2:Int) -> [[Int]] {
 //    var arrA : [[Int]] = Array(repeating: Array(repeating: 1,count:num1 ), count: num2)
     
 //    var arr2 = [[Int]](repeating: Array(repeating: 1,count: 5 ), count: 3)
-
-    var arr1 = [Int]()
+    var count = 1
     var arrB : [[Int]] = []
 //    var arrTotal : [[Int]] = [[]]
     for j in 0..<num2 {
-        arr1.append(j)
-    }
-    for i in 0..<num1 {
+        
+        var arr1 = [Int]()
+        
+        for i in 0..<num1 {
+            arr1.append(count*i)
+        }
+//        arr1.append(10)
+//        print(arr1, "\t")
+//        print(arr1, "\n")
         arrB.append(arr1)
+//        print(arrB)
     }
+    print(arrB)
 //        arr1 = [arr1.first!+10]
     
 //    for i in 0..<num1 {
@@ -23,11 +30,7 @@ func doubleArray(_ num1:Int, _ num2:Int) -> [[Int]] {
 //            arrB.append([[j][0]])
 //        }
 //    }
-    
-//    for k in
-    print(arrB)
-//    print(arrB)
-    return arrB
+ return arrB
 }
 
 doubleArray(10, 10)
