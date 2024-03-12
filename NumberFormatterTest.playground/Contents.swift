@@ -107,3 +107,26 @@ func solution2(_ s:String) -> Int {
 
 solution2("one4seveneight")
     
+//
+
+
+func solution0(_ s:String) -> Int {
+    var inputString = s
+
+    var dict: [Int: String] = [:]
+    (0...9).forEach { dict[$0] = convert($0) }
+
+    dict.forEach { inputString = inputString.replacingOccurrences(of: $1, with: String($0)) }
+
+    return Int(inputString)!
+}
+
+func convert(_ int: Int) -> String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .spellOut
+    return formatter.string(from: int as NSNumber)!
+}
+
+
+
+//

@@ -11,7 +11,7 @@ func solution(_ s:String, _ n:Int) -> String {
     // let simpleDigits = try Regex("[A-Za-z\\s]")
     // let ss = #"[a-zA-Z\\s]"#
     guard n >= 1, n <= 25 else{return "Err2"}
-    // guard s >= "^[a-zA-Z ]*$" else {return "Err1"}
+//     guard s >= "^[a-zA-Z ]*$" else {return "Err1"}
     // guard s >= ss else {return "Err1"}
     
     guard let regex = try? NSRegularExpression(pattern: "^[A-Za-z ]*$") else { return "Err1" }
