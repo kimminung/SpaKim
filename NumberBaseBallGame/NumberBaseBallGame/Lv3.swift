@@ -5,13 +5,18 @@
 ////  Created by 민웅킴 on 3/12/24.
 ////
 //
-//import Foundation
+import Foundation
 //
-//class 혹은 struct {
-//    func makeAnswer() -> Int {
+class Lv3 {
+    let n : Int
+    init(n: Int) {
+        self.n = n
+    }
+    func makeAnswer() -> Int {
 //        // Lv1에서 구현한 로직을 변경하기
-//    }
-//}
+        return Int.random(in: 1..<10)
+    }
+}
 //
 ///*
 // 정답이 되는 숫자를 0에서 9까지의 서로 다른 3자리의 숫자로 바꿔주세요

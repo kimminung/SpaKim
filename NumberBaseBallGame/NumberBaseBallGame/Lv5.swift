@@ -6,29 +6,38 @@
 ////
 //
 //import Foundation
-//
-//class 혹은 struct {
-//
-//    let(var) recordManager = RecordManager() // 기록을 관리하는 인스턴스 생성
-//    
-//    func start() {
-//    while XX {
-//        switch 입력값 {
-//            case
-//                // 1을 입력한 케이스
-//                ...
-//                // trialCount는 1회 게임에서의 시도 횟수
-//                recordManager.add(trialCount: trialCount) // add 함수 구현하기
-//            case
-//                // 2을 입력한 케이스
-//                ...
-//                recordManager.showRecords() // showRecords 함수 구현하기
-//            case
-//                // 3을 입력한 케이스
-//            default
+////
+//class Lv5 {
+//let n : Int
+//init(n: Int) {
+//    self.n = n
+//}
+////    var recordManager = RecordManager() // 기록을 관리하는 인스턴스 생성
+////    
+//    func start(입력값:Lv5) {
+//    while true {
+//        switch `입력값` {
+//        case .start:
+//         return       // 1을 입력한 케이스
+////                ...
+////                // trialCount는 1회 게임에서의 시도 횟수
+////                recordManager.add(trialCount: trialCount) // add 함수 구현하기
+//        case .log:
+//        return        // 2을 입력한 케이스
+////                ...
+////                recordManager.showRecords() // showRecords 함수 구현하기
+//        case .exit:
+//          return      // 3을 입력한 케이스
+//        default: return
 //        }
 //    }
 //    }
+//}
+//
+//enum Lv5 {
+//  case start
+//  case log
+//  case exit
 //}
 //
 ///*

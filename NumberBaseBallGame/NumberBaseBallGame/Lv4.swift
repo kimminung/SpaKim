@@ -6,26 +6,36 @@
 ////
 //
 //import Foundation
-//
-//class 혹은 struct {
-//    func start() {
-//    while XX { // while 뒤의 조건(XX) 작성해보기
-//      // 1. 안내문구 출력
-//      
-//        // 2. 유저의 입력값을 받음
-//           
-//        // 3. 입력값에 따라 처리(switch - case 활용해보기)
-//        switch 입력값 {
-//            case
-//                // 1을 입력한 케이스 작성
-//            case
-//                // 2을 입력한 케이스 작성
-//            case
-//                // 3을 입력한 케이스 작성
-//            default
+////
+//class Lv4 {
+//let n : Int
+//init(n: Int) {
+//    self.n = n
+//}
+//    func start(입력값: Lv4) {
+//    while true { // while 뒤의 조건(XX) 작성해보기
+////      // 1. 안내문구 출력
+////      
+////        // 2. 유저의 입력값을 받음
+////           
+////        // 3. 입력값에 따라 처리(switch - case 활용해보기)
+//        switch `입력값` {
+//        case .start:
+//            return    // 1을 입력한 케이스 작성
+//        case .log:
+//            return    // 2을 입력한 케이스 작성
+//        case .exit:
+//            return    // 3을 입력한 케이스 작성
+//        default: return
 //        }
 //    }
 //    }
+//}
+//
+//enum Lv4 {
+//  case start
+//  case log
+//  case exit
 //}
 //
 ///*

@@ -4,25 +4,56 @@
 ////
 ////  Created by 민웅킴 on 3/12/24.
 ////
+///
+//   하고싶었던것:
 //
-//import Foundation
+//  1. readLine puppeteer swift 안되넹
 //
-//class 혹은 struct {
-//    func start() {
-//        let answer = makeAnswer() // 정답을 만드는 함수
-//        
-//        while true {
-//            // 1. 유저에게 입력값을 받음
-//            
-//            // 2. 정수로 변환되지 않는 경우 반복문 처음으로 돌아가기
-//            
-//            // 3. 세자리가 아니거나, 0을 가지거나 특정 숫자가 두번 사용된 경우 반복문 처음으로 돌아가기
-//            
-//            // 4. 정답과 유저의 입력값을 비교하여 스트라이크/볼을 출력하기
-//            // 만약 정답이라면 break 호출하여 반복문 탈출
-//        }
+//  2. DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
+//      print("숫자3개 입력: \(n)")
 //    }
-//}
+//    break
+
+//  3.            guard n.isWholNumber == true else {return start()}
+//  4.            guard n.wholeNumberValue > 0 else {return start()}
+//
+import Foundation
+//
+class Lv2 {
+    let n : Int
+    init(n: Int) {
+        self.n = n
+    }
+    
+    func start() {
+        let answer = makeAnswer() // 정답을 만드는 함수
+        
+        print(answer)
+        while true {
+            //            // 1. 유저에게 입력값을 받음
+            //              // 우측 하단에 숫자 3개 입력하시고 ENTER!!
+            //            // 2. 정수로 변환되지 않는 경우 반복문 처음으로 돌아가기
+            guard let regex = try? NSRegularExpression(pattern: "^[1-9]*$") else { return }
+            let range = NSRange(location: 0, length: String(n).utf16.count)
+                guard regex.matches(in: String(n), range: range).count > 0 else { return }
+            
+            //            // 3. 세자리가 아니거나, 0을 가지거나 특정 숫자가 두번 사용된 경우 반복문 처음으로 돌아가기
+            //
+            //            // 4. 정답과 유저의 입력값을 비교하여 스트라이크/볼을 출력하기
+            //            // 만약 정답이라면 break 호출하여 반복문 탈출
+        }
+        
+    }
+    func makeAnswer() -> Int {
+        var result = ""
+        // 함수 내부를 구현하기
+        for _ in 1...3 {
+            
+            result += "\(Int.random(in: 1...9))"
+        }
+        return Int(result)!
+    }
+}
 //
 ///*
 // 정답을 맞추기 위해 3자리수를 입력하고 힌트를 받습니다
