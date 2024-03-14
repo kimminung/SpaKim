@@ -6,6 +6,9 @@ print("숫자3개 입력:")
 if let n = readLine() {
 //    if let n = n.isWholNumber == true {
         //    guard n.wholeNumberValue > 0 else {return start()}
+//    guard let regex = try? NSRegularExpression(pattern: "^[1-9]*$") else { throw }
+//    let range = NSRange(location: 0, length: String(n).utf16.count)
+//        guard regex.matches(in: String(n), range: range).count > 0 else {  }
         if let n = Int(n) {
             
             

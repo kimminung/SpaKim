@@ -7,15 +7,15 @@
 ///
 //   하고싶었던것:
 //
-//  1. readLine puppeteer swift 안되넹
+//  1. readLine puppeteer swift 안되넹 입력 상태 만들려고 했는딩
 //
 //  2. DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
 //      print("숫자3개 입력: \(n)")
-//    }
+//    }        차라리 배운걸로, 처음에 멍때리고 입력하는곳 못찾을까봐 3초 뒤에 입력하세요 띄우려고했는데 잘 안됨
 //    break
 
-//  3.            guard n.isWholNumber == true else {return start()}
-//  4.            guard n.wholeNumberValue > 0 else {return start()}
+//  3. guard n.isWholNumber == true else {return start()} 인트형 체크하려고 시도 사용 실패
+//  4. guard n.wholeNumberValue > 0 else {return start()} 인트형인지 값으로 체크하려고 시도 실패
 //
 import Foundation
 //
@@ -33,9 +33,11 @@ class Lv2 {
             //            // 1. 유저에게 입력값을 받음
             //              // 우측 하단에 숫자 3개 입력하시고 ENTER!!
             //            // 2. 정수로 변환되지 않는 경우 반복문 처음으로 돌아가기
-            guard let regex = try? NSRegularExpression(pattern: "^[1-9]*$") else { return }
+            guard let regex = try? NSRegularExpression(pattern: "^[1-9]*$") else { return start() }
             let range = NSRange(location: 0, length: String(n).utf16.count)
-                guard regex.matches(in: String(n), range: range).count > 0 else { return }
+            guard regex.matches(in: String(n), range: range).count > 0 else { return start() }
+//            딱 봐도 개판인 코드인건 알겠지만, 이걸 왜 썼는지 눈치는 채셨을듯.. main의 리드라인 불러오고싶은데.. start함수 리턴해주고 있고..
+            //재귀가 힌트같긴한디ㅠㅠ
             
             //            // 3. 세자리가 아니거나, 0을 가지거나 특정 숫자가 두번 사용된 경우 반복문 처음으로 돌아가기
             //

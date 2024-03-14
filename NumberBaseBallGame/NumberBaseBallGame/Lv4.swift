@@ -21,6 +21,7 @@
 ////        // 3. 입력값에 따라 처리(switch - case 활용해보기)
 //        switch `입력값` {
 //        case .start:
+//        fallthrough
 //            return    // 1을 입력한 케이스 작성
 //        case .log:
 //            return    // 2을 입력한 케이스 작성
