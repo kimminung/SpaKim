@@ -25,25 +25,71 @@ class Lv2 {
         self.n = n
     }
     
+    func intToArray (_ number: Int) -> [Int] {
+        var num = number
+        var result = [Int]()
+        while num >= 1 {
+            result.append(num % 10)
+            num /= 10
+        }
+        return result
+    }
+    
     func start() {
         let answer = makeAnswer() // 정답을 만드는 함수
+        let inputVal = n
+        var exit: Bool = false
+        
+        let answerList = intToArray(answer)
+        let inputList = intToArray(inputVal)
+        
+
         
         print(answer)
-        while true {
-            //            // 1. 유저에게 입력값을 받음
-            //              // 우측 하단에 숫자 3개 입력하시고 ENTER!!
-            //            // 2. 정수로 변환되지 않는 경우 반복문 처음으로 돌아가기
-            guard let regex = try? NSRegularExpression(pattern: "^[1-9]*$") else { return start() }
-            let range = NSRange(location: 0, length: String(n).utf16.count)
-            guard regex.matches(in: String(n), range: range).count > 0 else { return start() }
-//            딱 봐도 개판인 코드인건 알겠지만, 이걸 왜 썼는지 눈치는 채셨을듯.. main의 리드라인 불러오고싶은데.. start함수 리턴해주고 있고..
-            //재귀가 힌트같긴한디ㅠㅠ
+        repeat {
+            var ball: Int = 0
+            var strike: Int = 0
+            var answerIndex: Int = 0
+            var inputIndex: Int = 0
+            // 1. 유저에게 입력값을 받음
+            // main.swift에서 처리
             
-            //            // 3. 세자리가 아니거나, 0을 가지거나 특정 숫자가 두번 사용된 경우 반복문 처음으로 돌아가기
-            //
-            //            // 4. 정답과 유저의 입력값을 비교하여 스트라이크/볼을 출력하기
-            //            // 만약 정답이라면 break 호출하여 반복문 탈출
-        }
+            // 2. 정수로 변환되지 않는 경우 반복문 처음으로 돌아가기
+            // main.swift에서 처리
+            
+            // 3. 세자리가 아니거나, 0을 가지거나 특정 숫자가 두번 사용된 경우 반복문 처음으로 돌아가기
+            //0을 가진거, 반복 아직 처리 못했음
+            
+            // 4. 정답과 유저의 입력값을 비교하여 스트라이크/볼을 출력하기
+            for i in answerList{
+                
+                inputIndex = 0
+                for input in inputList{
+                    if i == input {
+                        if answerIndex == inputIndex {
+                            strike += 1
+                            break
+                        } else {
+                            ball += 1
+                            break
+                        }
+                    }
+                    inputIndex += 1
+                }
+                answerIndex += 1
+            }
+
+            if strike == 3 {
+                exit = true
+                print("정답입니다!")
+                // 만약 정답이라면 break 호출하여 반복문 탈출
+                break
+            } else {
+                print("strike \(strike), ball \(ball)")
+                continue
+            }
+            
+        } while exit == true
         
     }
     func makeAnswer() -> Int {

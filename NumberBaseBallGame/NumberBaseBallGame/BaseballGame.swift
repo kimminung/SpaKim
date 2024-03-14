@@ -30,23 +30,3 @@ class BaseballGame {
         return Int(result)!
     }
 }
-
-
-/*
- for _ in 0..<1 {
-    result += "\(Int.random(in: 1..<10))"
-     for _ in 0..<1 {
-         result += "\(Int.random(in: 1..<10))"
-         for _ in 0..<1 {
-             result += "\(Int.random(in: 1..<10))"
-         }
-     }
- }
- print(result)
-
- for i in n {
-     if i == Int(result.prefix(0)) {
-         print("\(i+1)strike")
-     }
- }
- */
