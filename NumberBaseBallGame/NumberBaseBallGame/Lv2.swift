@@ -149,3 +149,104 @@ class Lv2 {
 // 456
 // 정답입니다!
 // */
+
+
+//
+func examLv2() {
+    let answer = ExamLv2MakeAnswer()
+    
+    print("정답:", answer)
+    
+    print("< 게임을 시작합니다 >")
+    
+    let input = readLine() ?? "" // ?? : 오류날 경우 빈 문자열로 처리를 한다.
+    
+    print("User Input: ", input)
+    
+    
+    
+    //let input = "123ㄱ"
+    
+    /*
+//    let stringArr = input.map { $0 } //$0: String.Element
+    let stringArr = input.map { String($0) }
+    
+    print(stringArr.compactMap{ Int($0) })
+    */
+    while true {
+        
+        print("숫자를 입력하세요")
+        let numberArray = input.map { String($0) }.compactMap{Int($0)} //체이닝
+        
+        //    print(numberArray)
+        //TODO: input 값 검증
+        let isValidate = validateInput(numberArray)
+        
+        guard isValidate else {
+            print("올바르지 않은 값입니다.")
+            print()
+//            exit(0) //exit func exit(_: Int32) -> Never
+            continue
+        }
+        
+        var strike = 0
+        var ball = 0
+        
+        for (index, number) in numberArray.enumerated() { // enumerated() 튜플식으로 index가 딸려옴
+            
+            //스트라이크
+            if number == answer[index] {
+                strike += 1
+                continue
+            }
+            
+            //볼
+            if answer.contains(number) {
+                ball += 1
+                continue
+            }
+        }
+        
+        if strike == 0, ball == 0 {
+            print("Nothing")
+        } else if strike == 3 {
+            print("정답입니다")
+            break
+        }else{
+            print("\(strike)스트라이크", terminator: " ")
+            print("\(ball)볼")
+        }
+        print()
+    }
+    
+//    print("스트라이크:", strike)
+//    print("볼:", ball)
+    
+    // let input = "123"
+    
+    // for text in input {
+    // print(text)
+    // print(type(of: text))    //character
+    // }
+    
+}
+func ExamLv2MakeAnswer() -> [Int] {
+    
+    let arr = (1...9).map { $0 }
+
+    let shuffledArray = arr.shuffled()
+
+    return [Int](shuffledArray[0...2]) //type conversion
+}
+    //유효한 값이면  true, 않으면 false
+/*
+func validateInput(_ input: [Int]) -> Bool {
+    guard input.count == 3 else {
+        return false
+    }
+    return true
+}*/
+
+func validateInput(_ input: [Int]) -> Bool {
+    input.count == 3
+}

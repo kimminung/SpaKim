@@ -116,3 +116,82 @@ class Lv3 {
 //
 //
 // */
+//
+func examLv3() {
+    let answer = ExamLv3MakeAnswer()
+    
+    print("정답:", answer)
+    
+    print("< 게임을 시작합니다 >")
+    
+    let input = readLine() ?? "" // ?? : 오류날 경우 빈 문자열로 처리를 한다.
+    
+    print("User Input: ", input)
+    
+    
+    while true {
+        
+        print("숫자를 입력하세요")
+        let numberArray = input.map { String($0) }.compactMap{Int($0)} //체이닝
+        
+        //    print(numberArray)
+        //TODO: input 값 검증
+        let isValidate = validateInput2(numberArray)
+        
+        guard isValidate else {
+            print("올바르지 않은 값입니다.")
+            print()
+            
+            continue
+        }
+        
+        var strike = 0
+        var ball = 0
+        
+        for (index, number) in numberArray.enumerated() { // enumerated() 튜플식으로 index가 딸려옴
+            
+            //스트라이크
+            if number == answer[index] {
+                strike += 1
+                continue
+            }
+            
+            //볼
+            if answer.contains(number) {
+                ball += 1
+                continue
+            }
+        }
+        
+        if strike == 0, ball == 0 {
+            print("Nothing")
+        } else if strike == 3 {
+            print("정답입니다")
+            break
+        }else{
+            print("\(strike)스트라이크", terminator: " ")
+            print("\(ball)볼")
+        }
+        print()
+    }
+    
+    
+    
+}
+func ExamLv3MakeAnswer() -> [Int] {
+    
+    let arr = (0...9).map { $0 }    //lv3
+    
+    let shuffledArray = arr.shuffled()
+    
+    if shuffledArray[0] == 0 {
+        return [Int](shuffledArray[1...3])
+    } else {
+        return [Int](shuffledArray[0...2]) //type conversion
+    }
+}
+
+
+func validateInput2(_ input: [Int]) -> Bool {
+    input.count == 3
+}

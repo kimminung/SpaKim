@@ -30,20 +30,20 @@ while true {
                 
                 ///main.swift <-> Lv3.swift
                 ///함수 실행부                    // Lv1, 2와 다르게 따로 입력라인 만들어 봄
-                  let gameLv3 = Lv3()
-                  try gameLv3.start()
+                  
+//                  examLv3()
 
                 ///main.swift <-> Lv4.swift
-//                let gameLv4 = Lv4(n: n )
-//                gameLv4.start(입력값: Lv4)
+//                let gameLv4 = BaseballGame2()
+//                gameLv4.examLv4()
                 
                 ///main.swift <-> Lv5.swift
-//                let gameLv5 = Lv5(n: n )
-//                gameLv5.start(입력값: Lv5)
+//                let gameLv5 = BaseballGame3()
+//                gameLv5.examLv5()
                 
                 ///main.swift <-> Lv6.swift
-//                let gameLv6 = Lv6(n: n )
-//                gameLv6.start(입력값: Lv6)
+                let gameLv6 = BaseballGame4()
+                    gameLv6.examLv6()
 // 입력 부분 2차 주석
           /*  }
             
