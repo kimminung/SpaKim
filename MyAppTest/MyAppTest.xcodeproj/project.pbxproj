@@ -13,6 +13,7 @@
 		CCA902372BA80D0F003D2AAB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CCA902362BA80D0F003D2AAB /* Base */; };
 		CCA902392BA80D10003D2AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA902382BA80D10003D2AAB /* Assets.xcassets */; };
 		CCA9023C2BA80D10003D2AAB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CCA9023B2BA80D10003D2AAB /* Base */; };
+		CCA902442BA855E5003D2AAB /* Rotating.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA902432BA855E5003D2AAB /* Rotating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CCA902382BA80D10003D2AAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCA9023B2BA80D10003D2AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCA9023D2BA80D10003D2AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCA902432BA855E5003D2AAB /* Rotating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotating.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				CCA9022F2BA80D0F003D2AAB /* AppDelegate.swift */,
 				CCA902312BA80D0F003D2AAB /* SceneDelegate.swift */,
 				CCA902332BA80D0F003D2AAB /* ViewController.swift */,
+				CCA902432BA855E5003D2AAB /* Rotating.swift */,
 				CCA902352BA80D0F003D2AAB /* Main.storyboard */,
 				CCA902382BA80D10003D2AAB /* Assets.xcassets */,
 				CCA9023A2BA80D10003D2AAB /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA902342BA80D0F003D2AAB /* ViewController.swift in Sources */,
+				CCA902442BA855E5003D2AAB /* Rotating.swift in Sources */,
 				CCA902302BA80D0F003D2AAB /* AppDelegate.swift in Sources */,
 				CCA902322BA80D0F003D2AAB /* SceneDelegate.swift in Sources */,
 			);
