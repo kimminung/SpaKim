@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KimsTodoListMemoji" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RvI-6Q-6XG">
+                                <rect key="frame" x="0.0" y="149" width="430" height="749"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELL" rowHeight="44" id="qJn-9e-1Gk" customClass="TableViewCell" customModule="KimsTodoListMemoji" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="430" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qJn-9e-1Gk" id="MOi-L5-3jE">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="CbP-2O-0xp"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vfI-Kq-JHf"/>
+                                    <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="SPr-eH-5GH"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToDo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNP-ww-e1f">
+                                <rect key="frame" x="57" y="59" width="316" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sg-nW-0An">
+                                <rect key="frame" x="327" y="118" width="83" height="23"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="추가하기"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RvI-6Q-6XG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="30D-Ob-HaL"/>
+                            <constraint firstItem="sNP-ww-e1f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9j6-AL-beK"/>
+                            <constraint firstItem="sNP-ww-e1f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="Fty-ei-Jq5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2sg-nW-0An" secondAttribute="trailing" constant="20" id="TIX-Y3-VcX"/>
+                            <constraint firstItem="RvI-6Q-6XG" firstAttribute="top" secondItem="2sg-nW-0An" secondAttribute="bottom" constant="8" id="Uik-ME-wEd"/>
+                            <constraint firstItem="2sg-nW-0An" firstAttribute="top" secondItem="sNP-ww-e1f" secondAttribute="bottom" constant="8" id="hE3-JV-Bi2"/>
+                            <constraint firstItem="RvI-6Q-6XG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="i4y-MP-KOy"/>
+                            <constraint firstItem="RvI-6Q-6XG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jfQ-v9-X7C"/>
+                            <constraint firstItem="RvI-6Q-6XG" firstAttribute="top" secondItem="sNP-ww-e1f" secondAttribute="bottom" constant="39" id="kPl-le-EH7"/>
+                            <constraint firstItem="RvI-6Q-6XG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="q5R-z0-TLB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sNP-ww-e1f" secondAttribute="trailing" constant="57" id="xTn-vr-JFv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="2sg-nW-0An" id="w6m-bI-zLi"/>
+                        <outlet property="tableView" destination="RvI-6Q-6XG" id="m2g-Zp-Rax"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-22.325581395348838" y="3.8626609442060089"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -15,13 +15,16 @@ print(numberArray)
 // [1, 2, 3, 4, 5]
 
 // map으로 구현
-let stringArray = ["1", "2", "3", "4", "5"]
+let stringArray = [ "2", "3", "4", "5","1"]
 numberArray = stringArray.map {
         if let changeToInt = Int($0) {
                 return changeToInt
         }
         return 0
 }
+print(stringArray)
+print(numberArray)
+
 
 // for 문으로 구현
 // numbers에서 짝수만 추출하기
@@ -41,8 +44,9 @@ print(evenNumbers)
 // filter로 구현
 // numbers에서 짝수만 추출하기
 
-let numbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let numbers1 = [1, 2, 3, 4, 5, 8, 7, 9, 6]
 let evenNumbers2 = numbers1.filter { $0 % 2 == 0 }
+print(evenNumbers)
 
 // for 문으로 구현
 // 각 요소의 합 구하기
@@ -74,6 +78,7 @@ print(sum1)
 
 let numbers4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let sum2 = numbers4.reduce(0) { $0 + $1 }
+
 
 
 

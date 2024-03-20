@@ -117,11 +117,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             print("off")
         }
     }
-    
+    /*
+     오늘의 FAQ!!
+     강의 내용 중 slider에서 slider.value = 50 라고 세팅했지만 실제 슬라이더에서는 중간으로 위치하지 않을겁니다!
+     그 이유는 코드를 순차적으로 읽는 와중에 디폴트로는 slider.value가 최대 1.0까지만 가질수 있어서 50을 입력해도 반영이 되지 않고
+     이후 minimumValue, maximumValue를 설정해주었기 떄문입니다!
+     결과적으로는 첨부한 이미지처럼 minimumValue, maximumValue을 세팅한 이후로 value를 변경하도록 순서를 수정해야 slider에 중간에 위치한답니다~!
+     :어깨를_으쓱하는_여성: 주석 처리된 setValue는 뭘까요? 내부적으로 어떻게 되어있는지 왜 쓰는지도 한번 찾아보시면 좋곘네요 :미소짓는_얼굴:
+     */
     func setUISlider() {
         let slider = UISlider()
         
         slider.value = 50
+        // slider.setValue(50, animated: true)
         slider.minimumValue = 0
         slider.maximumValue = 100
         slider.minimumTrackTintColor = UIColor.systemPink
