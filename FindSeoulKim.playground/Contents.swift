@@ -1,8 +1,15 @@
 import UIKit
 
 func solution8(_ seoul:[String]) -> String {
+    guard seoul.count >= 1, seoul.count <= 1000,
+    seoul.contains("Kim") == true else {return "Error"}
+    for i in seoul {
+        guard i.count >= 1, i.count <= 20, i is String == true else {return "Error"}
+    }
     return "김서방은 \(seoul.index(of: "Kim")!)에 있다"
 }
+    
+    solution8(["Jane","Kim"])
 
 func solution9(_ seoul:[String]) -> String {
     return "김서방은 \(seoul.indices.filter { seoul[$0] == "Kim" }.first!)에 있다"

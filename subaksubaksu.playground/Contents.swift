@@ -37,7 +37,12 @@ func solution1(_ n:Int) -> String {
 }
 
 func solution2(_ n:Int) -> String {
-    return (0..<n).map{($0%2==0 ? "수":"박")}.reduce("", +)
+    var result = ""
+    guard n <= 10000, n > 0 else {return " "}
+    result = (0..<n).map{($0%2==0 ? "수":"박")}.reduce("", +)
+    guard result.count <= 10000 else {return " "}
+        
+        return result
 }
 
 

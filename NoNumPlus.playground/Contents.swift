@@ -7,8 +7,6 @@ func solutionXXX(_ numbers:[Int]) -> Int {
     
     guard numbers.min()! >= 0 && numbers.max()! <= 9 else {return -1}
     
-    // guard
-    
     var count = 0
     //    [0, 0, 0, 0, 0, 0, 0]
 //    let origin = Array(repeating: 0, count: numbers.count-1)
@@ -18,6 +16,14 @@ func solutionXXX(_ numbers:[Int]) -> Int {
     print(origin)
     var orgTotal = 0
     
+    var numberSet = Set<Int>()
+    
+    for number in numbers {
+        guard !numberSet.contains(number) else {
+            return -999
+        }
+        numberSet.insert(number)
+    }
     for x in 0...origin.count-1 {
         orgTotal += origin[x]
     }
@@ -44,13 +50,32 @@ func solutionXXX(_ numbers:[Int]) -> Int {
     return orgTotal
 }
 
-solutionXXX([5,8,4,0,6,7,9])
+//solutionXXX([5,8,4,0,6,7,9])
+//solutionXXX([1,2,3,4,6,7,8,0])
+solutionXXX([1,2,3,4,6,7,8,1])
 
 
 func solution1(_ numbers: [Int]) -> Int {
-    return (0...9).filter { !numbers.contains($0) }.reduce(0, +)
-}
-
+    guard numbers.count >= 1, numbers.count <= 9 else {return -1}
+    
+    guard numbers.min()! >= 0 && numbers.max()! <= 9 else {return -1}
+    
+        var numberSet = Set<Int>()
+        
+        for number in numbers {
+            guard !numberSet.contains(number) else {
+                return -999
+            }
+            numberSet.insert(number)
+        }
+        
+        return (0...9).filter { !numbers.contains($0) }.reduce(0, +)
+    }
+//    return (0...9).filter { !numbers.contains($0) }.reduce(0, +)
+//}
+//solution1([5,8,4,0,6,7,9])
+solution1([1,2,3,4,6,7,8,0])
+//solution1([1,2,3,4,6,7,8,1])
 
 //import Foundation
 

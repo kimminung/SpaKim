@@ -2,6 +2,12 @@ import UIKit
 
 
 func solution2(_ arr:[Int], _ divisor:Int) -> [Int] {
+    for i in arr {
+    guard i > 0 else {return []}
+    }
+
+    guard divisor is Int == true, divisor > 0 else {return []}
+    guard arr.count >= 1 else {return []}
     let array = arr.sorted().filter{ $0 % divisor == 0 }
     return  array == [] ? [-1] : array
 }

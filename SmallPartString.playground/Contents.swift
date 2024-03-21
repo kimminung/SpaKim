@@ -4,6 +4,18 @@ func solution(_ t:String, _ p:String) -> Int {
     guard p.count >= 1, p.count <= 18 else {return -1}
     guard p.count <= t.count, t.count <= 10000 else {return -1}
     
+    let RegexPattern = #"^[1-9]\d*$"#
+
+    guard let regex = try? NSRegularExpression(pattern: RegexPattern)
+        else { return 0 }
+
+    let range = NSRange(location: 0, length: t.utf16.count)
+    let range2 = NSRange(location: 0, length: p.utf16.count)
+
+    guard regex.firstMatch(in: t, options: [], range: range) != nil,
+          regex.firstMatch(in: p, options: [], range: range2) != nil
+        else { return 0 }
+    
     //var t : Int = 0
     //var p : Int = 0
     var t = t
@@ -34,8 +46,8 @@ func solution(_ t:String, _ p:String) -> Int {
         return result
     }
 
-//solution("3141592", "271")
-solution("003141592", "00271")
+solution("3141592", "271")
+//solution("003141592", "00271")
 
 func solution9(_ t: String, _ p: String) -> Int {
     return (0..<t.count - p.count + 1).map { Int(t[String.Index(utf16Offset: $0, in: t)..<String.Index(utf16Offset: $0 + p.count, in: t)]) ?? 0 }

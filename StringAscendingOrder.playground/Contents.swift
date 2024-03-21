@@ -26,6 +26,7 @@ func solution(_ s:String) -> String {
 }*/
 
 func solution(_ s:String) -> String {
+    guard s.count >= 1, s is String == true else {return " "}
     return String(s.sorted { $0 > $1 })
 }
 

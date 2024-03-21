@@ -38,7 +38,7 @@ func solution(_ s:String) -> Int {
 }
  */
  
-func solution(_ s:String) -> Int {
+func solution0(_ s:String) -> Int {
     var result: Int = 0
     if s.count > 1 && s.count <= 5 {
         if let r = Int(s) {
@@ -52,8 +52,8 @@ func solution(_ s:String) -> Int {
     return result
 }
  
-print(solution(String(s)))
-solution("-0234")
+print(solution0(String(s)))
+solution0("-0234")
 
 
 func solution1(_ s:String) -> Int {
@@ -73,3 +73,22 @@ func solution3(_ s:String) -> Int {
 
     return Int(String(s[s.startIndex..<s.endIndex])) ?? 0
 }
+
+
+func solution(_ s:String) -> Int? {
+    guard s.count >= 1 && s.count <= 5 else {return 999999}
+    
+    
+    let sString = s
+    let regexPattern = #"^[+-]?(?!0)\d+$"#
+    guard let regex = try? NSRegularExpression(pattern: regexPattern)
+    else { return 0 }
+    let range = NSRange(location: 0, length: sString.utf16.count)
+    guard regex.firstMatch(in: sString, options: [], range: range) != nil
+    else { return 0 }
+    
+    
+    return Int(s)
+}
+
+solution("1234")
