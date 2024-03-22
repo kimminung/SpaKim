@@ -9,9 +9,15 @@ import UIKit
 
 
 class ViewController: UIViewController {
-//    let data = Array(1...40) // [Int]
+    
+    
+    var todoID : Int = 1
+    let todoTitle : String = ""
+    var isCompleted : Bool = true
+    
+    var data3 = Array(1...40) // [Int]
 //    let data2 = [1...40]  //다른 결과 [ClosedRange<Int>]
-    var data3 = Array(1...2)
+    
     @IBOutlet weak var addButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
