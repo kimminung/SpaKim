@@ -21,41 +21,41 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oey-NI-ujT">
                                 <rect key="frame" x="0.0" y="59" width="430" height="839"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0PJ-2Q-Tdf">
-                                    <size key="itemSize" width="430" height="139"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0PJ-2Q-Tdf">
+                                    <size key="itemSize" width="425" height="129"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChatListCollectionViewCell" id="hne-3e-qu7" customClass="ChatListCollectionViewCell" customModule="ChatList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="139"/>
+                                        <rect key="frame" x="2.6666666666666665" y="0.0" width="425" height="129"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6HY-hc-JFH">
-                                            <rect key="frame" x="0.0" y="0.0" width="430" height="139"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="425" height="129"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v28-ha-FgK">
-                                                    <rect key="frame" x="16" y="29.666666666666671" width="80" height="80"/>
+                                                    <rect key="frame" x="16" y="24.666666666666671" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="CQX-Fe-IVG"/>
                                                         <constraint firstAttribute="width" constant="80" id="ECW-Ko-zDz"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqN-Lt-jUl">
-                                                    <rect key="frame" x="116" y="29.666666666666671" width="39" height="27"/>
+                                                    <rect key="frame" x="115.99999999999999" y="24.666666666666671" width="38.333333333333329" height="27"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대화내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxB-Tn-dtB">
-                                                    <rect key="frame" x="115.99999999999999" y="61.666666666666664" width="62.333333333333329" height="21.666666666666664"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="대화내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxB-Tn-dtB">
+                                                    <rect key="frame" x="115.99999999999999" y="56.666666666666664" width="62.333333333333329" height="21.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apr 4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dE-aN-ZCk">
-                                                    <rect key="frame" x="369.66666666666669" y="58.666666666666664" width="44.333333333333314" height="21.666666666666664"/>
+                                                    <rect key="frame" x="364.66666666666669" y="53.666666666666664" width="44.333333333333314" height="21.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -73,7 +73,13 @@
                                                 <constraint firstItem="v28-ha-FgK" firstAttribute="leading" secondItem="6HY-hc-JFH" secondAttribute="leading" constant="16" id="teR-wk-J7G"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="430" height="139"/>
+                                        <size key="customSize" width="425" height="129"/>
+                                        <connections>
+                                            <outlet property="chatLabel" destination="fxB-Tn-dtB" id="Gyj-uy-DgU"/>
+                                            <outlet property="dateLabel" destination="6dE-aN-ZCk" id="BUE-Up-SHb"/>
+                                            <outlet property="namelabel" destination="KqN-Lt-jUl" id="Uzx-lu-U5F"/>
+                                            <outlet property="thumbnail" destination="v28-ha-FgK" id="Dhw-dG-HvK"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -87,6 +93,9 @@
                             <constraint firstItem="Oey-NI-ujT" firstAttribute="leading" secondItem="IVt-hL-poe" secondAttribute="leading" id="v9E-5g-U3L"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Oey-NI-ujT" id="J6g-iC-bJX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXZ-ih-qtw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
