@@ -27,8 +27,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="430" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nhh-23-huU">
-                                                    <rect key="frame" x="359" y="6" width="51" height="31"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nhh-23-huU">
+                                                    <rect key="frame" x="359" y="6.6666666666666679" width="51" height="31.000000000000004"/>
                                                 </switch>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XvJ-jj-J8W">
                                                     <rect key="frame" x="70" y="0.0" width="51" height="44"/>
@@ -39,6 +39,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="Nhh-23-huU" secondAttribute="trailing" constant="22" id="WTv-Dw-IWb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="Nhh-23-huU" firstAttribute="centerY" secondItem="qJn-9e-1Gk" secondAttribute="centerY" id="Iac-A9-bAi"/>
+                                        </constraints>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -75,6 +78,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sNP-ww-e1f" secondAttribute="trailing" constant="57" id="xTn-vr-JFv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kAE-ag-jgU">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="GvW-yU-BI7"/>
+                        <barButtonItem key="rightBarButtonItem" title="plusButton" image="plus" catalog="system" id="D2S-47-lDn"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="2sg-nW-0An" id="w6m-bI-zLi"/>
                         <outlet property="tableView" destination="RvI-6Q-6XG" id="m2g-Zp-Rax"/>
@@ -82,10 +89,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22.325581395348838" y="3.8626609442060089"/>
+            <point key="canvasLocation" x="876.2790697674418" y="3.8626609442060089"/>
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

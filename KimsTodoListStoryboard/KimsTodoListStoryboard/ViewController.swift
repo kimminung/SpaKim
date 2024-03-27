@@ -32,10 +32,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @objc func showAlert(_ button: UIButton) {
         button.isSelected = !button.isSelected
         
-        let alertController = UIAlertController(title: "text", message: "textfield", preferredStyle: .alert)
-        let add = UIAlertAction(title: "text22", style: .default) {_ in
-            self.cellTitle.append(" ")
+        let alertController = UIAlertController(title: "할 일 등록", message: "적당히 간추려서 써주세요. 제발..^", preferredStyle: .alert)
+        let add = UIAlertAction(title: "추가하기", style: .default) {_ in
+            if let textField = alertController.textFields?.first, let text = textField.text {
+                print("입력값: \(text)")
+                self.cellTitle.append("\(text)")
+            }
+            
             self.tableView_.reloadData()
+        }
+        
+        alertController.addTextField { textField in textField.placeholder = " 할 일을 입력하세요."
         }
         
         for action in [add] {
