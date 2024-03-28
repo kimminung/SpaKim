@@ -14,6 +14,11 @@ class ChatListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var chatLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    override func awakeFromNib() {  //뷰컨에서 셀의 ID를 가진것을 dequeue하고있는데, 스토리보드에서 꺼내와라.
+        super.awakeFromNib()        //스토리보드 실행할때 깨어나는 녀석
+        thumbnail.layer.cornerRadius = 40
+    }
+    
     func configure(_ chat: Chat ) {
         thumbnail.image = UIImage(named: chat.name)
         namelabel.text = chat.name
