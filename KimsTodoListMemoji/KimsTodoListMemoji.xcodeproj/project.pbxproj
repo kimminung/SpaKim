@@ -14,6 +14,7 @@
 		CCBC94A12BA989CF007A5D5C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CCBC94A02BA989CF007A5D5C /* Base */; };
 		CCBC94A32BA989D0007A5D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCBC94A22BA989D0007A5D5C /* Assets.xcassets */; };
 		CCBC94A62BA989D0007A5D5C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CCBC94A52BA989D0007A5D5C /* Base */; };
+		CCE7D2BF2BB5A74C0065DE0D /* TodoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7D2BE2BB5A74C0065DE0D /* TodoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CCBC94A22BA989D0007A5D5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCBC94A52BA989D0007A5D5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCBC94A72BA989D0007A5D5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCE7D2BE2BB5A74C0065DE0D /* TodoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				CCBC94992BA989CF007A5D5C /* AppDelegate.swift */,
 				CCBC949B2BA989CF007A5D5C /* SceneDelegate.swift */,
+				CCE7D2BE2BB5A74C0065DE0D /* TodoData.swift */,
 				CCBC949D2BA989CF007A5D5C /* ViewController.swift */,
 				CC05DFDD2BAAA7D500AF6C4C /* TableViewCell.swift */,
 				CCBC949F2BA989CF007A5D5C /* Main.storyboard */,
@@ -144,6 +147,7 @@
 				CCBC949E2BA989CF007A5D5C /* ViewController.swift in Sources */,
 				CC05DFDE2BAAA7D500AF6C4C /* TableViewCell.swift in Sources */,
 				CCBC949A2BA989CF007A5D5C /* AppDelegate.swift in Sources */,
+				CCE7D2BF2BB5A74C0065DE0D /* TodoData.swift in Sources */,
 				CCBC949C2BA989CF007A5D5C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

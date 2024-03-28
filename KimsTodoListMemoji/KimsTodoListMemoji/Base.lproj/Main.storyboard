@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KimsTodoListMemoji" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="KimsTodoListMemoji" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="149" width="430" height="749"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELL" rowHeight="44" id="qJn-9e-1Gk" customClass="TableViewCell" customModule="KimsTodoListMemoji" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="44" id="qJn-9e-1Gk" customClass="TableViewCell" customModule="KimsTodoListMemoji" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="430" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qJn-9e-1Gk" id="MOi-L5-3jE">
@@ -29,19 +29,40 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nhh-23-huU">
                                                     <rect key="frame" x="359" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                                                    <connections>
+                                                        <action selector="todoSwitchAction:" destination="qJn-9e-1Gk" eventType="valueChanged" id="XKu-ZQ-ihc"/>
+                                                    </connections>
                                                 </switch>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XvJ-jj-J8W">
-                                                    <rect key="frame" x="70" y="0.0" width="51" height="44"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxb-7A-W1S">
+                                                    <rect key="frame" x="101" y="11" width="42" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfB-gD-hSk">
+                                                    <rect key="frame" x="51" y="12" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Yxb-7A-W1S" secondAttribute="bottom" id="3re-wO-TzN"/>
                                                 <constraint firstAttribute="trailing" secondItem="Nhh-23-huU" secondAttribute="trailing" constant="22" id="WTv-Dw-IWb"/>
+                                                <constraint firstItem="Nhh-23-huU" firstAttribute="leading" secondItem="Yxb-7A-W1S" secondAttribute="trailing" constant="216" id="gsS-rT-c9C"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
+                                            <constraint firstItem="Yxb-7A-W1S" firstAttribute="centerY" secondItem="qJn-9e-1Gk" secondAttribute="centerY" id="H8I-Th-Gd9"/>
                                             <constraint firstItem="Nhh-23-huU" firstAttribute="centerY" secondItem="qJn-9e-1Gk" secondAttribute="centerY" id="Iac-A9-bAi"/>
+                                            <constraint firstItem="Yxb-7A-W1S" firstAttribute="top" secondItem="qJn-9e-1Gk" secondAttribute="top" constant="11" id="zs8-XR-Cvh"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="numButton" destination="TfB-gD-hSk" id="Wdn-uJ-lGb"/>
+                                            <outlet property="onOff" destination="Nhh-23-huU" id="ySi-8I-CLp"/>
+                                            <outlet property="textLabels" destination="Yxb-7A-W1S" id="blC-o8-dgw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
