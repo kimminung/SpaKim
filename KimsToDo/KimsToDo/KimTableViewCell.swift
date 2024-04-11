@@ -18,6 +18,7 @@ class KimTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var `switch`: UISwitch!
     @IBOutlet weak var strikeThroughView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
     
     weak var delegate: TodoTableViewCellDelegate?   // weak 이 없으면 뷰컨과 셀 따로 각각 가지고 있는게 됨. 그리고 AnyObject를 상속시켜준다
 //    unowned                                       // 참조타입.

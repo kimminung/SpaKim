@@ -11,6 +11,13 @@ class KimTodoListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    //최초 사용시 초기화 하려고 lazy를 씀
+    lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yy년 MM월 dd일"
+        return dateFormatter
+    }() //실행된걸 클로저로 호출. 반환은 dateFormatter
+    
     var data: [KimTodo] = [
         KimTodo(id: .init(), title: "A"),
         KimTodo(id: .init(), title: "B"),
@@ -58,7 +65,13 @@ class KimTodoListViewController: UIViewController {
             
             
             // 텍스트뷰야 data를 새롭게 업데이트했으니 다시 그려라. //테이블에게 메소드(메세지를 보낸다)
-            self.tableView.reloadData()
+//            self.tableView.reloadData()
+            
+            
+            //어디 인덱스 패스에 부드럽게 추가할거냐?
+            //데이터 count -1이 인덱스자리와 일치하니까 그걸 쓴다.
+            let indexpath = IndexPath(row: self.data.count - 1, section: 0)
+            self.tableView.insertRows(at: [indexpath], with: .automatic)
             
             
             //        tableView.reloadSections(<#T##sections: IndexSet##IndexSet#>, with: <#T##UITableView.RowAnimation#>)
@@ -89,6 +102,11 @@ extension KimTodoListViewController: UITableViewDataSource {
         cell?.strikeThroughView.isHidden = !todo.isCompleted
         
         cell?.delegate = self
+        
+        let dateString = self.dateFormatter.string(from: todo.createdAt)
+        
+        cell?.dateLabel.text = dateString
+        
         cell?.indexPath = indexPath
         
         return cell ?? UITableViewCell()
@@ -118,6 +136,10 @@ extension KimTodoListViewController: TodoTableViewCellDelegate {
         
         //todo의 완료상태를 바꿀거야.
         data[indexPath.row].isCompleted = isOn
+        
+        
+        //날짜만 나오게 응용할 코드..더 생각해보기
+//        data[indexPath.row].createdAt = Date()
         
         self.tableView.reloadRows(at: [indexPath], with: .automatic)
         
