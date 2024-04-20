@@ -13,13 +13,70 @@ class FrameworkListViewController: UIViewController {
     
     let list: [AppleFramework] = AppleFramework.list
     
+    //    [section [item]][section [item]][section [item]]  //이런 형태임
+    
+    
+//    var dataSource: UICollectionViewDiffableDataSource<SectionIdentifierType: Hashable, <#ItemIdentifierType: Hashable & Sendable#>>
+    
+    /*var dataSource: UICollectionViewDiffableDataSource<Section, AppleFramework>!*/
+    
+    
+    typealias Item = AppleFramework //리다이렉팅 해주는중
+    enum Section {
+        case main
+    }
+    
+    //    [section [item]]
+    var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
+    //Type 'FrameworkListViewController.Item' (aka 'AppleFramework') does not conform to protocol 'Hashable'
+    
+    
+    
+    //        diffable datasource
+    //        - presentation
+    //        snapshot
+    //        - Data
+    //        compositional Layout
+    //        - layout
+    
+    
     // Data, Presentation, Layout
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.dataSource = self
+//        collectionView.dataSource = self
         collectionView.delegate = self
         
+        navigationController?.navigationBar.topItem?.title = "☀️ Apple Frameworks"
+        
+//        Presentation
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
+//            let data = item
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FrameworkCell", for: indexPath) as? FrameworkCell else {return nil}
+            
+            // 환경을 설정하다
+            cell.configure(item)
+            
+            return cell
+        })
+        
+        
+//        Data
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(list, toSection: .main)
+//        [section[item]] 이걸 구현중. snapshot을 통해서.
+        
+        //데이터에 적용. apply
+//        dataSource.apply(<#T##snapshot: NSDiffableDataSourceSnapshot<Section, Item>##NSDiffableDataSourceSnapshot<Section, Item>#>)
+        dataSource.apply(snapshot)
+        
+        
+        //Layout
+        collectionView.collectionViewLayout = layout()
+        
+        /*
         navigationController?.navigationBar.topItem?.title = "☀️ Apple Frameworks"
         
         if let flowlayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -27,6 +84,25 @@ class FrameworkListViewController: UIViewController {
         }
         
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 16, bottom: 0, right: 16)
+         */
+    }
+    
+    private func layout() -> UICollectionViewCompositionalLayout {
+        
+//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension: .fractionalWidth(0.33))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension: .fractionalHeight(1))
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.33))
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        return layout
     }
 }
 

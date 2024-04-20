@@ -41,6 +41,8 @@ class FrameworkListViewController: UIViewController {
         
         // layer
         collectionView.collectionViewLayout = layout()
+        
+        collectionView.delegate = self  // 위임을 내가 하겠다. 스크롤 뷰가
     }
     
     private func layout() -> UICollectionViewCompositionalLayout {
@@ -67,5 +69,16 @@ extension FrameworkListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let framework = list[indexPath.item]
         print(">>> selected: \(framework.name)")
+        
+        //우리가 띄우고 싶은것, , FrameworkDetailViewController
+        
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "FrameworkDetailViewController") as! FrameworkDetailViewController
+        
+        vc.framework = framework
+//        vc.modalPresentationStyle = .fullScreen
+        
+        present(vc, animated: true)
     }
 }
