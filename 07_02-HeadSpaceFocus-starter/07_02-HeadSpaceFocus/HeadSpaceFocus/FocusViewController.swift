@@ -43,6 +43,8 @@ class FocusViewController: UIViewController {
         // Layout
         collectionView.collectionViewLayout = layout()
         
+        collectionView.delegate = self
+        
         updateButtonTitle()
     }
     
@@ -78,5 +80,19 @@ class FocusViewController: UIViewController {
         datasource.apply(snapshot)
         
         updateButtonTitle()
+    }
+}
+
+extension FocusViewController: UICollectionViewDelegate {
+    // didSelectItemAt 컬렉션뷰에서 어떤 아이템을 선택했다.
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = items[indexPath.item]
+        print(">>>\(item.title)")
+        
+        let storyboard = UIStoryboard(name: "QuickFocus", bundle: nil)   //storyboard작성시 대소문자 구분 필수.
+        let vc = storyboard.instantiateViewController(withIdentifier: "QuickFocusListViewController") as! QuickFocusListViewController
+//        present(vc, animated: true)
+        vc.title = item.title
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
