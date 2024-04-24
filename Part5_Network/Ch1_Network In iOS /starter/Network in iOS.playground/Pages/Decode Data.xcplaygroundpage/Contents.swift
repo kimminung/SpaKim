@@ -24,6 +24,7 @@ let configuration = URLSessionConfiguration.default
 let session = URLSession(configuration: configuration)
 
 let url = URL(string: "https://api.github.com/users/kimminung")!
+//let url = URL(string: "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=9a51098fee3a5f3ee0d7e6cb17074a8c&targetDt=20240422")!
 
 let task = session.dataTask(with: url) { data, response, error in
     guard let httpResponse = response as? HTTPURLResponse,
